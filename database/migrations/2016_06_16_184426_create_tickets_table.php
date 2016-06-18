@@ -15,6 +15,7 @@ class CreateTicketsTable extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->integer('user_id');
             $table->integer('client_id'); //客戶
             $table->integer('category_id'); //類別
 

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ticket extends Model
 {
     protected $fillable = [
+    	'user_id',
     	'client_id',
     	'category_id',
     	'obj_model',
@@ -19,6 +20,11 @@ class Ticket extends Model
     	'comment',
     	'status'
     ];
+
+    public function user()
+    {
+    	return $this->belongsTo('App\User');
+    }
 
     public function client()
     {

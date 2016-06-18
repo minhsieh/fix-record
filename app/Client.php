@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Client extends Model
 {
     protected $fillable = [
+    	'user_id',
     	'first_name',
     	'last_name',
     	'phone',
@@ -20,5 +21,10 @@ class Client extends Model
     public function tickets()
     {
     	return $this->hasMany('App\Ticket','client_id');
+    }
+
+    public function user()
+    {
+    	return $this->belongsTo('App\User');
     }
 }
