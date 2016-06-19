@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'system'] , function(){
+Route::group(['prefix' => 'manage'] , function(){
 	//Route::get('' , ['uses' => '']);
+	Route::get('/' , function(){
+		return view('manage.index');
+	});
 });

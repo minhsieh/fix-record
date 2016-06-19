@@ -61,10 +61,10 @@ class BasicSeeder extends Seeder
 	    		'Hawei',
 	    	];
 
-	    	foreach(range(1,12) as $index){
+	    	foreach($categories as $category => $value){
 	    		$categoryData = [
 	    			'user_id' => $one->id,
-	    			'name' => $categories[$index-1]
+	    			'name' => $value
 	    		];
 	    		App\Category::create($categoryData);
 	    	}
