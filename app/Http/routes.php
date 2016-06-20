@@ -27,4 +27,8 @@ Route::group(['prefix' => 'manage' , 'middleware' => 'auth'] , function(){
 	Route::get('/' , function(){
 		return view('manage.index');
 	});
+
+	Route::group(['prefix'=>'ticket'] , function(){
+		Route::get('/' , ['uses'=>'TicketController@index']);
+	});
 });
